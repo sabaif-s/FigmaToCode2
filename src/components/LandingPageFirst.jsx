@@ -7,11 +7,47 @@ import bar from "../assets/images/bar.png";
 const  LandingPageFirst = () => {
     const [height,setHeight]=useState("");
     const [renderComponent,setRenderComponent]=useState(false);
+    const [clickedDrop,setClickedDrop]=useState(false);
+    const [currentMessage,setCurrentMessage]=useState(
+        {
+            titleLeft:"I'm Subscriber",
+            titleRight:"Subscriber",
+            descriptionFirst:"Get Paid to",
+            descriptionSecond:"Subscribe",
+            descriptionThird:"4NOKO!"
+        }
+    );
+    
+    const arrayText=[
+        {
+            titleLeft:"I'm Subscriber",
+            titleRight:"Subscriber",
+            descriptionFirst:"Get Paid to",
+            descriptionSecond:"Subscribe",
+            descriptionThird:"4NOKO!"
+        },
+        {
+            titleLeft:"I'm YouTuber",
+            titleRight:"YouTuber",
+            descriptionFirst:"Boost Your YouTube",
+            descriptionSecond:"Subs with",
+            descriptionThird:"4NOKO!"
+        }
+    ]
     useEffect(()=>{
     const heightNew=window.innerHeight;
     setHeight(heightNew);
     setRenderComponent(true);
     },[]);
+    useEffect(()=>{
+       if(clickedDrop){
+        setCurrentMessage(arrayText[1]);
+       }
+       else{
+        setCurrentMessage(arrayText[0]);
+       }
+    },[clickedDrop]);
+    
     return (
         <>
        {
@@ -40,15 +76,19 @@ const  LandingPageFirst = () => {
             </div>
             <div className='absolute top-0 w-full flex justify-center items-end' style={{height:"50%"}} >
             <div className='z-50 relative flex justify-center rounded-full p-2' style={{height:"18%", width:"90%", backgroundColor:"#0C6374"}} >
-                   <div className='w-1/2 flex justify-center items-center gap-x-2' >
+                   <div 
+                   onClick={()=>{
+                    setClickedDrop((prev)=> !prev);
+                   }}
+                   className='w-1/2 flex justify-center items-center gap-x-2 cursor-pointer' >
                  <span className={` ${height < 700 ? "text-sm":"text-lg"} text-white`} >
-                   I am Subscriber
+                   {currentMessage.titleLeft}
                  </span>
                  <img src={drop} className='h-4'  alt="" />
                    </div>
                    <div className='w-1/2 flex justify-center items-center rounded-full text-white h-full' style={{backgroundColor: "#FF014F"}}>
                     <span className='text-2xl' >
-                       Subscriber  
+                       {currentMessage.titleRight} 
                     </span>
                    </div>
             </div>
@@ -56,10 +96,10 @@ const  LandingPageFirst = () => {
             
             <div className={` ${height < 700 ? "gap-y-2":"gap-y-4"} relative flex flex-col py-4`} style={{height:"50%",width:"90%"}} >
                   <span className='text-white font-semibold text-6xl w-full text-center' >
-                                    Get Paid TO
+                                    {currentMessage.descriptionFirst}
                   </span>
                   <span className='text-white font-semibold text-4xl w-full text-center' >
-                                    Subscribe <span style={{color:"#0C6374"}} > 4NOKO! </span> 
+                                    {currentMessage.descriptionSecond} <span style={{color:"#0C6374"}} > {currentMessage.descriptionThird} </span> 
                   </span>
                   <span className='text-gray-300 text-xl mt-4 w-full text-center' >
                   Lorem ipsum dolor sit amet consectetur. Nulla bibendum eget urna fauceque.
