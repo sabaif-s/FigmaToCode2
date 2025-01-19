@@ -10,6 +10,7 @@ const LandingPageFirst = () => {
     const [height, setHeight] = useState("");
     const [renderComponent, setRenderComponent] = useState(false);
     const [clickedDrop, setClickedDrop] = useState(false);
+    const [clickedNow, setClickedNow] = useState(0);
     const [currentMessage, setCurrentMessage] = useState({
         titleLeft: "I'm Subscriber",
         titleRight: "Subscriber",
@@ -64,10 +65,14 @@ const LandingPageFirst = () => {
                         animate={{ y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Link to="/dashboard" className='w-full flex justify-center' >
-                        <button className='text-white w-1/2 bg-red-500 px-4 py-2 rounded-full'>
-                            GET STARTED
-                        </button>
+                        <Link to="/dashboard" className='w-full flex justify-center'>
+                            <motion.button
+                                className='text-white w-1/2 bg-red-500 px-4 py-2 rounded-full'
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                GET STARTED
+                            </motion.button>
                         </Link>
                     </motion.div>
                     <img src={backImage} className='w-full h-full absolute z-0' alt="" />
@@ -84,14 +89,44 @@ const LandingPageFirst = () => {
                         animate={{ y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <img src={logo} alt="Logo" className="h-2/3" />
-                        <a href="#home" className="text-black text-xl text-semibold ">About</a>
-                        <a href="#about" className="text-black text-xl text-semibold ">Feature</a>
-                        <Link to="/login" >
-                        <button
-                        className="bg-red-500 text-white px-4 py-2 rounded-full">Login</button>
+                        <motion.img
+                            src={logo}
+                            alt="Logo"
+                            className="h-2/3"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        />
+                        <motion.a
+                            href="#home"
+                            className="text-black text-xl text-semibold"
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                            About
+                        </motion.a>
+                        <motion.a
+                            href="#about"
+                            className="text-black text-xl text-semibold"
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                            Feature
+                        </motion.a>
+                        <Link to="/login">
+                            <motion.button
+                                className="bg-red-500 text-white px-4 py-2 rounded-full"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 0.5 }}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Login
+                            </motion.button>
                         </Link>
-                    
                     </motion.div>
                     <motion.div
                         className='absolute top-0 w-full flex justify-center items-end'
@@ -107,15 +142,32 @@ const LandingPageFirst = () => {
                                 }}
                                 className='w-1/2 flex justify-center items-center gap-x-2 cursor-pointer'
                             >
-                                <span className={` ${height < 700 ? "text-sm" : "text-lg"} text-white`}>
+                                <motion.span
+                                    className={` ${height < 700 ? "text-sm" : "text-lg"} text-white`}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.6 }}
+                                >
                                     {currentMessage.titleLeft}
-                                </span>
-                                <img src={drop} className='h-4' alt="" />
+                                </motion.span>
+                                <motion.img
+                                    src={drop}
+                                    className='h-4'
+                                    alt=""
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.7 }}
+                                />
                             </div>
                             <div className='w-1/2 flex justify-center items-center rounded-full text-white h-full' style={{ backgroundColor: "#FF014F" }}>
-                                <span className='text-2xl'>
+                                <motion.span
+                                    className='text-2xl'
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.8 }}
+                                >
                                     {currentMessage.titleRight}
-                                </span>
+                                </motion.span>
                             </div>
                         </div>
                     </motion.div>
@@ -126,21 +178,59 @@ const LandingPageFirst = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        <span className={` ${clickedDrop && height < 700 ? "text-4xl":"text-6xl"} text-white font-semibold  w-full text-center`}>
+                        <motion.span
+                            className={` ${clickedDrop && height < 700 ? "text-4xl" : "text-6xl"} text-white font-semibold  w-full text-center`}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.9 }}
+                        >
                             {currentMessage.descriptionFirst}
-                        </span>
-                        <span className='text-white font-semibold text-4xl w-full text-center'>
+                        </motion.span>
+                        <motion.span
+                            className='text-white font-semibold text-4xl w-full text-center'
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 1.0 }}
+                        >
                             {currentMessage.descriptionSecond} <span style={{ color: "#0C6374" }}> {currentMessage.descriptionThird} </span>
-                        </span>
-                        <span className='text-gray-300 text-xl mt-4 w-full text-center'>
+                        </motion.span>
+                        <motion.span
+                            className='text-gray-300 text-xl mt-4 w-full text-center'
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 1.1 }}
+                        >
                             Lorem ipsum dolor sit amet consectetur. Nulla bibendum eget urna fauceque.
-                        </span>
+                        </motion.span>
                         <div className='w-full flex justify-center gap-x-4 items-center '>
-                            <img src={bar} className='' alt="" />
-                            <div className='w-4 h-4 rounded-full bg-white '>
-                            </div>
-                            <div className='w-4 h-4 rounded-full bg-white '>
-                            </div>
+                            <motion.img
+                                src={bar}
+                                className=''
+                                alt=""
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 1.2 }}
+                            />
+                            <motion.div
+                                onClick={() => {
+                                    setClickedDrop((prev) => !prev);
+                                    setClickedNow(1);
+                                }}
+                                className={` ${clickedNow == 1 ? "bg-green-900" : "bg-white"} w-4 h-4 rounded-full `}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 1.3 }}
+                            />
+                            <motion.div
+                                onClick={() => {
+                                    setClickedDrop((prev) => !prev);
+                                    setClickedNow(2);
+                                }}
+                                className={` ${clickedNow == 2 ? "bg-green-900" : "bg-white"} w-4 h-4 rounded-full`}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 1.4 }}
+                            />
                         </div>
                     </motion.div>
                 </motion.div>

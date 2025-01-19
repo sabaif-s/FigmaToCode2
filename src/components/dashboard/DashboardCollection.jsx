@@ -10,7 +10,7 @@ const  DashBoardCollection = () => {
               setCurrentShow(id);
     }
     return (
-         <div className='px-4 py-2 w-full h-screen' >
+         <div className='px-4 py-2 w-full h-screen overflow-y-auto' >
              <DashBoardFooter key={"Footer"}/>
          <DashBoardTop key={"TOP"} />
          <div className='' style={{height:"17%"}} >

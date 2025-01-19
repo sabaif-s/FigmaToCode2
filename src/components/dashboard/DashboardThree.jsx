@@ -9,7 +9,7 @@ const  DashboardThree = ({handleClick}) => {
     
     
     return (
-        <div className='w-full bg-gray-50 mt-4 flex flex-col justify-start items-center ' >
+        <div className='w-full bg-gray-50 mt-8 flex flex-col justify-start items-center min-h-screen ' >
             <div className='flex flex-row pb-4 justify-between font-semibold w-full px-4 space-x-4'>
             <div
             onClick={()=>{
@@ -34,7 +34,7 @@ const  DashboardThree = ({handleClick}) => {
                 clickedAnchor == 1 && (
                    <motion.div
                    key={"first"}
-                              className="flex flex-row flex-wrap gap-x-2 gap-y-2 justify-center overflow-y-auto"
+                              className="flex flex-row flex-wrap min-h-screen pb-20 gap-x-2 gap-y-2 justify-center overflow-y-auto"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.5 }}
@@ -110,7 +110,7 @@ const  DashboardThree = ({handleClick}) => {
                      
                  <div
                  key={"second"}
-                 className="w-full flex flex-col gap-y-4 overflow-y-scroll">
+                 className="w-full min-h-screen pb-20 mt-4 flex flex-col gap-y-4">
                              {leaderboardData.map((user, index) => (
                                  <motion.div
                                      key={user.id}
@@ -192,7 +192,7 @@ const  DashboardThree = ({handleClick}) => {
               clickedAnchor == 3 && (
                 <div
                 key={"third"}
-                className="w-full flex flex-col gap-y-4 overflow-x-hidden">
+                className="w-full min-h-screen pb-20 flex flex-col gap-y-4 overflow-x-hidden">
                 {referralsData.map((user, index) => (
                     <motion.div
                         key={user.id}
