@@ -1,14 +1,19 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import DashBoardTop from './DashBoardTop';
 import DashBoardSecond from './DashboardSecond';
 import DashboardThree from './DashboardThree';
 const  DashBoardCollection = () => {
+    const [currentShow,setCurrentShow]=useState(1);
+
+    const handleClick=(id)=>{
+              setCurrentShow(id);
+    }
     return (
          <div className='px-4 py-2 w-full h-screen' >
-         <DashBoardTop/>
+         <DashBoardTop key={"TOP"} />
          <div className='' style={{height:"17%"}} >
-         <DashBoardSecond currentShow={1} />
-         <DashboardThree />
+         <DashBoardSecond key={"SECOND"} currentShow={currentShow} />
+         <DashboardThree key={"THIRD"} handleClick={handleClick}  />
          </div>
          </div>
     );
