@@ -4,6 +4,7 @@ import backImage from '../assets/images/backImage.png';
 import logo from "../assets/images/4nokoLogo.png";
 import drop from "../assets/images/Drop.png";
 import bar from "../assets/images/bar.png";
+import { Link } from 'react-router-dom';
 
 const LandingPageFirst = () => {
     const [height, setHeight] = useState("");
@@ -63,9 +64,11 @@ const LandingPageFirst = () => {
                         animate={{ y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
+                        <Link to="/dashboard" className='w-full flex justify-center' >
                         <button className='text-white w-1/2 bg-red-500 px-4 py-2 rounded-full'>
                             GET STARTED
                         </button>
+                        </Link>
                     </motion.div>
                     <img src={backImage} className='w-full h-full absolute z-0' alt="" />
                     <motion.div
@@ -84,7 +87,11 @@ const LandingPageFirst = () => {
                         <img src={logo} alt="Logo" className="h-2/3" />
                         <a href="#home" className="text-black text-xl text-semibold ">About</a>
                         <a href="#about" className="text-black text-xl text-semibold ">Feature</a>
-                        <button className="bg-red-500 text-white px-4 py-2 rounded-full">Login</button>
+                        <Link to="/login" >
+                        <button
+                        className="bg-red-500 text-white px-4 py-2 rounded-full">Login</button>
+                        </Link>
+                    
                     </motion.div>
                     <motion.div
                         className='absolute top-0 w-full flex justify-center items-end'

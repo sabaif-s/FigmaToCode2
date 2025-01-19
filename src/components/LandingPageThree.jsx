@@ -7,6 +7,7 @@ import twitter from "../assets/images/social1.png";
 import linkedIn from "../assets/images/social2.jpg";
 import youtube from "../assets/images/social3.jpg";
 import instagram from "../assets/images/social4.jpg";
+import { Link } from 'react-router-dom';
 
 const LandingPageThree = () => {
     const ref = React.useRef(null);
@@ -32,12 +33,14 @@ const LandingPageThree = () => {
                     <span className='relative z-50 '>
                         Elest in.
                     </span>
+                    <Link to="/dashboard" className='w-full flex justify-center' >
                     <button
                         style={{ backgroundColor: "#D83E3E" }}
-                        className='rounded-full p-2 relative z-50 mt-4'
+                        className='rounded-full p-2 w-1/2 relative  z-50 mt-4'
                     >
                         Get Started
                     </button>
+                    </Link>
                     <img src={backImage} className='absolute z-10 top-0' alt="" />
                 </div>
             </motion.div>
