@@ -33,7 +33,7 @@ const LandingPageThree = () => {
                     <span className='relative z-50 '>
                         Elest in.
                     </span>
-                    <Link to="/dashboard" className='w-full flex justify-center' >
+                    <Link to="/signup" className='w-full flex justify-center' >
                     <button
                         style={{ backgroundColor: "#D83E3E" }}
                         className='rounded-full p-2 w-1/2 relative  z-50 mt-4'

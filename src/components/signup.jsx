@@ -11,14 +11,14 @@ const Signup = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      
+      {/* Signup Card with Background Image at the Top */}
       <motion.div
         className="w-full max-w-[430px] bg-white rounded-[32px] shadow-lg overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-       
+        {/* Background Image at the Top */}
         <motion.div
           className="w-full relative z-0 h-[200px] bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -26,7 +26,8 @@ const Signup = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         ></motion.div>
- 
+
+        {/* Signup Form */}
         <motion.div
           className="p-6 absolute top-40 bg-white overflow-x-hidden left-0 w-full z-50 shadow-lg rounded-[32px]"
           initial={{ opacity: 0, y: 50 }}
@@ -42,7 +43,7 @@ const Signup = () => {
             Sign up
           </motion.h2>
 
-         
+          {/* Social Sign-up Buttons */}
           <motion.div
             className="flex justify-center gap-4 mt-4"
             initial={{ opacity: 0 }}
@@ -107,7 +108,7 @@ const Signup = () => {
             </motion.div>
           </motion.div>
 
-          
+          {/* Signup Button */}
           <motion.button
             className="w-full h-[56px] mt-6 bg-[#D83E3E] text-white text-lg font-bold rounded-lg hover:bg-red-600 focus:outline-none"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -117,7 +118,7 @@ const Signup = () => {
             Sign up
           </motion.button>
 
-          
+          {/* Footer */}
           <motion.div
             className="text-center mt-6 text-sm text-gray-500"
             initial={{ opacity: 0 }}

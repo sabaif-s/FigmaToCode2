@@ -16,6 +16,7 @@ const ProfilePage = () => {
   ];
 
   return (
+    <div className="flex justify-center" >
     <motion.div
       className="w-[390px] h-[844px] bg-white flex flex-col items-center rounded-tl-[32px]"
       initial={{ opacity: 0 }}
@@ -125,6 +126,7 @@ const ProfilePage = () => {
         ))}
       </motion.div>
     </motion.div>
+    </div>
   );
 };
 

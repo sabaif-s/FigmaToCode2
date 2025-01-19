@@ -6,7 +6,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import ProfilePage from './components/profile';
 function App() {
-  const [count, setCount] = useState(0)
+   
 
   return (
     <Router>

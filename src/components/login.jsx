@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import backgroundImage from "/src/assets/backgroundimage.png";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const Navigate=useNavigate()
   return (
+    <div className="w-full flex justify-center" >
     <motion.div
       className="justify-center w-full max-w-[430px] h-screen rounded-[32px] items-center relative shadow-lg overflow-hidden"
       initial={{ opacity: 0 }}
@@ -76,7 +79,9 @@ const Login = () => {
          
         <motion.button
           className="w-full h-[56px] mt-6 bg-[#D83E3E] text-white text-lg font-bold rounded-lg hover:bg-red-600 focus:outline-none"
-          onClick={() => alert("Login button clicked!")}
+          onClick={()=>{
+            Navigate("/dashboard")
+          }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
@@ -133,6 +138,7 @@ const Login = () => {
         </motion.div>
       </motion.div>
     </motion.div>
+    </div>
   );
 };
 
