@@ -16,14 +16,14 @@ const LandingPageThree = () => {
     return (
         <>
             <motion.div
-                className='w-full relative mt-8'
+                className='w-full relative mt-8 md:rounded-tl-[32px] md:rounded-[24px] md:w-[390px] bg-white  md:rounded-[24px]  '
                 style={{ height: "367px" }}
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5 }}
             >
-                <div className='w-full h-full relative text-4xl z-50 gap-y-2 text-white flex flex-col justify-center items-center'>
+                <div className='w-full h-full bg-white md:rounded-tl-[32px] md:rounded-[24px] relative text-4xl z-50 gap-y-2 text-white flex flex-col justify-center items-center'>
                     <span className='relative z-50'>
                         Lorem ipsum dolor
                     </span>
@@ -41,11 +41,11 @@ const LandingPageThree = () => {
                         Get Started
                     </button>
                     </Link>
-                    <img src={backImage} className='absolute z-10 top-0' alt="" />
+                    <img src={backImage} className='absolute z-10 top-0 md:rounded-tl-[32px] md:rounded-[24px]' alt="" />
                 </div>
             </motion.div>
             <motion.div
-                className='w-full bg-black text-white flex flex-col gap-y-4'
+                className='w-full md:w-[390px] md:rounded-tl-[32px] md:rounded-[24px] bg-black text-white flex flex-col gap-y-4'
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -90,7 +90,7 @@ const LandingPageThree = () => {
                         </div>
                     </div>
                 </div>
-                <div className='relative h-1 overflow-hidden' style={{ width: "100vw" }}>
+                <div className='relative h-1 w-[100vw] bg-white overflow-hidden md:w-[390px]'>
                     <div style={{ height: "2px", width: "100vw" }} className='bg-white left-0 absolute mb-4'>
                     </div>
                 </div>

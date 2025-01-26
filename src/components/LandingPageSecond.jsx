@@ -8,9 +8,9 @@ const LandingPageSecond = () => {
     const isInView = useInView(ref, { once: false });
 
     return (
-        <div className='w-full bg-white flex flex-col gap-y-2 justify-center items-center'>
+        <div className='w-full md:w-[390px]  md:rounded-tl-[32px] md:rounded-[24px] md:bg-gray-300  bg-white flex flex-col gap-y-2 justify-center items-center'>
             <motion.div
-                className='flex flex-col w-full px-16 py-2'
+                className='flex flex-col w-full  md:rounded-tl-[32px] md:rounded-[24px] md:bg-gray-300 bg-white px-16 py-2'
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -28,7 +28,7 @@ const LandingPageSecond = () => {
                 </span>
             </motion.div>
             <motion.div
-                className='flex flex-col w-full px-16 py-2'
+                className='flex flex-col w-full bg-white  md:rounded-tl-[32px] md:rounded-[24px] md:bg-gray-300 px-16 py-2'
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 }}

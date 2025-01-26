@@ -54,7 +54,7 @@ const LandingPageFirst = () => {
         <>
             {renderComponent && (
                 <motion.div
-                    className='w-full h-screen bg-red-200 relative flex flex-col justify-between items-center'
+                    className='w-full md:w-[390px] md:h-[884px] md:rounded-[24px]  md:rounded-tl-[32px] h-screen bg-red-200 relative flex flex-col justify-between items-center'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
@@ -75,7 +75,7 @@ const LandingPageFirst = () => {
                             </motion.button>
                         </Link>
                     </motion.div>
-                    <img src={backImage} className='w-full h-full absolute z-0' alt="" />
+                    <img src={backImage} className='w-full h-full  md:rounded-[24px]  md:rounded-tl-[32px] absolute z-0' alt="" />
                     <motion.div
                         className="w-full bg-white relative z-20 flex justify-around gap-x-2 items-center"
                         style={{

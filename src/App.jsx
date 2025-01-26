@@ -6,6 +6,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import ProfilePage from './components/profile';
 import CoinCheck from './components/coin/Coin';
+import WithdrawPage from './components/withdraw/Withdraw';
 function App() {
    
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/signup" element={<Signup/>} />
       <Route path="/profile" element={<ProfilePage/>} />
       <Route path="/coin" element={<CoinCheck/>}/>
+      <Route path="/withdraw" element={<WithdrawPage/>}/>
     </Routes>
   </Router>
   )

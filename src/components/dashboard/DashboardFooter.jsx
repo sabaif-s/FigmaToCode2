@@ -10,7 +10,7 @@ const DashBoardFooter = () => {
     },[])
     return (
         <motion.div
-            className='fixed bg-gray-50 flex pb-4  justify-around items-center rounded-lg bottom-0 left-0 z-50 w-full'
+            className='fixed bg-gray-50 flex pb-4 md:w-[390px]  justify-around items-center rounded-lg bottom-0 z-50 w-full'
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

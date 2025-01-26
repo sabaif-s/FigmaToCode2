@@ -6,20 +6,20 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const CoinCheck = () => {
-    const Navigate=useNavigate();
+  const Navigate = useNavigate();
   return (
-    <div className='w-full h-screen bg-red-300 flex justify-center items-center'>
-      <div className='rounded-[24px] bg-white pt-8 flex flex-col gap-y-2 justify-start items-center px-4' style={{ width: "390px", height: "844px" }}>
+    <div className='w-full h-screen bg-red-300  flex justify-center md:items-center'>
+      <div className=' md:rounded-[24px] bg-white pt-4 flex flex-col gap-y-2 w-full h-full md:w-[390px] md:h-[844px] justify-start md:rounded-tl-[32px] items-center px-4'>
         <div className='w-full flex relative text-[#323434] font-semibold text-2xl flex-row justify-center items-center'>
           <span className='text-[#323434]'>Coins</span>
-          <img 
-          onClick={()=>{
-                 Navigate(-1);
-          }}
-          src={arrowLeft} className='w-10 h-10 object-cover cursor-pointer left-0 absolute' alt="" />
+          <img
+            onClick={() => {
+              Navigate(-1);
+            }}
+            src={arrowLeft} className='w-10 h-10 object-cover cursor-pointer left-0 absolute' alt="" />
         </div>
         <div className='w-full flex flex-col gap-y-2 justify-start items-center'>
-          <motion.img src={topMan} className='w-24 h-24 object-cover' alt="" 
+          <motion.img src={topMan} className='w-24 h-24 object-cover' alt=""
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -27,7 +27,7 @@ const CoinCheck = () => {
           <span className='text-black opacity-50 text-[16px]'>@user_name</span>
         </div>
         <div className='w-full flex justify-center gap-x-1 items-center'>
-          <motion.img src={coin} className='w-16 h-16 object-cover' alt="" 
+          <motion.img src={coin} className='w-16 h-16 object-cover' alt=""
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -103,8 +103,14 @@ const CoinCheck = () => {
             </div>
           </div>
         </div>
-        <div className='w-full flex flex-col gap-y-6 mt-8 justify-start pl-2'>
-          <div className='flex flex-row justify-start items-center gap-x-2'>
+        <div className='w-full flex flex-col gap-y-6 cursor-pointer mt-8 justify-start pl-2'>
+          <motion.div
+            className='flex flex-row justify-start items-center gap-x-2'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <div className='w-16 h-16'>
               <div className='w-full h-full flex flex-row gap-x-1 justify-center items-end rounded-full bg-[#0C6374] bg-opacity-10 p-4'>
                 <div className='w-4 h-6 bg-[#0C6374]'></div>
@@ -114,10 +120,16 @@ const CoinCheck = () => {
             </div>
             <div className='flex flex-col h-full justify-start items-start'>
               <span className='text-black font-semibold text-lg'>#2</span>
-              <span className='text-[#9098A3] font-semibold text-lg'>Leaderboard</span>
+              <span className='text-[#9098A3] font-semibold '>Leaderboard</span>
             </div>
-          </div>
-          <div className='flex flex-row justify-start items-center gap-x-2'>
+          </motion.div>
+          <motion.div
+            className='flex flex-row justify-start items-center gap-x-2'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <div className='w-16 h-16'>
               <div className='w-full h-full flex flex-row gap-x-1 justify-center items-end rounded-full bg-[#0C6374] bg-opacity-10 p-4'>
                 <div className='w-4 h-6 bg-[#0C6374]'></div>
@@ -127,10 +139,16 @@ const CoinCheck = () => {
             </div>
             <div className='flex flex-col h-full justify-start items-start'>
               <span className='text-black font-semibold text-lg'>#300</span>
-              <span className='text-[#9098A3] font-semibold text-lg'>Subscribed Channel</span>
+              <span className='text-[#9098A3] font-semibold '>Subscribed Channel</span>
             </div>
-          </div>
-          <div className='flex flex-row justify-start items-center gap-x-2'>
+          </motion.div>
+          <motion.div
+            className='flex flex-row justify-start items-center gap-x-2'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <div className='w-16 h-16'>
               <div className='w-full h-full flex flex-row gap-x-1 justify-center items-end rounded-full bg-[#0C6374] bg-opacity-10 p-4'>
                 <div className='w-4 h-6 bg-[#0C6374]'></div>
@@ -140,9 +158,9 @@ const CoinCheck = () => {
             </div>
             <div className='flex flex-col h-full justify-start items-start'>
               <span className='text-black font-semibold text-lg'>#15</span>
-              <span className='text-[#9098A3] font-semibold text-lg'>Referrals</span>
+              <span className='text-[#9098A3] font-semibold '>Referrals</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

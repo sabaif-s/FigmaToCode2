@@ -32,7 +32,7 @@ const  DashBoardSecond = ({currentShow}) => {
                     Lorem Ipsum dolor sit amet
                 </motion.span>
                 <motion.button
-                    className='text-white px-4 py-1 bg-red-500 mt-2 rounded-full'
+                    className='text-white px-4 py-1 bg-red-500 mt-2 cursor-pointer rounded-full'
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}

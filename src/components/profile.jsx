@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -14,11 +14,18 @@ const ProfilePage = () => {
     { label: "Help & Support", description: "", icon: "src/assets/help and support.png" },
     { label: "Log out", description: "Further secure your account for safety", icon: "src/assets/Logout.png" },
   ];
-
+useEffect(()=>{
+  if(activeIndex == 1){
+    Navigate("/coin");
+  }
+  if(activeIndex == 2){
+    Navigate("/withdraw");
+  }
+},[activeIndex]);
   return (
-    <div className="flex justify-center" >
+    <div className="flex justify-center md:items-center md:h-screen md:bg-red-300" >
     <motion.div
-      className="w-[390px] h-[844px] bg-white flex flex-col items-center rounded-tl-[32px]"
+      className="w-[390px] h-[844px] bg-white flex flex-col items-center rounded-[24px] rounded-tl-[32px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -89,7 +96,7 @@ const ProfilePage = () => {
         {options.map((item, index) => (
           <motion.div
             key={index}
-            className={`flex items-center justify-between py-4 px-4 rounded-lg ${
+            className={`flex items-center justify-between cursor-pointer py-4 px-4 rounded-lg ${
               activeIndex === index ? "bg-[#E6F5F6]" : "hover:bg-gray-100"
             } transition-all`}
             onClick={() => setActiveIndex(index)}

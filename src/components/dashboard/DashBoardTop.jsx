@@ -20,7 +20,7 @@ const DashBoardTop = () => {
                     transition={{ duration: 0.5 }}
                 />
             </div>
-            <div className='w-1/2 flex justify-end gap-x-4 items-center'>
+            <div className='w-1/2 flex justify-end gap-x-4 items-center cursor-pointer'>
                 <motion.img
                     src={notification}
                     className='w-12'
@@ -34,7 +34,7 @@ const DashBoardTop = () => {
                     Navigate("/profile")
                 }}
                     src={man}
-                    className='w-12'
+                    className='w-12 cursor-pointer'
                     alt=""
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
