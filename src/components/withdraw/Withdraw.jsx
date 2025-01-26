@@ -1,5 +1,8 @@
 import React from 'react';
 import backArrow from '../../assets/coin/Logout.png';
+import usaFlag from '../../assets/withdraw/usa.png';
+import visa from '../../assets/withdraw/visa.png';
+import paypal from '../../assets/withdraw/paypal.png';
 const  WithdrawPage = () => {
     return (
         <div className='w-full h-screen bg-red-300  flex justify-center md:items-center'>
@@ -16,7 +19,10 @@ const  WithdrawPage = () => {
                     Phone Number
                 </span>
                 <div className='w-full flex justify-start px-4 gap-x-2 items-center' >
-
+                     <img src={usaFlag} className='w-8 h-8 object-cover' alt="" />
+                     <span>
+                        Phone Number
+                     </span>
                 </div>
         </div>
         </div>
