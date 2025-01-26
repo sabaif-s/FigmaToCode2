@@ -10,8 +10,10 @@ const  DashBoardCollection = () => {
               setCurrentShow(id);
     }
     return (
-         <div className='px-4 py-2 w-full h-screen overflow-y-auto' >
-             <DashBoardFooter key={"Footer"}/>
+        <>
+        <DashBoardFooter/>
+         <div className='px-4 py-2 w-full relative h-full overflow-y-auto' >
+            
          <DashBoardTop key={"TOP"} />
          <div className='' style={{height:"17%"}} >
          <DashBoardSecond key={"SECONDS"} currentShow={currentShow} />
@@ -19,6 +21,7 @@ const  DashBoardCollection = () => {
          <DashboardThree key={"THIRD"} handleClick={handleClick}  />
         
          </div>
+         </>
     );
 };
 

@@ -34,7 +34,7 @@ const  DashboardThree = ({handleClick}) => {
                 clickedAnchor == 1 && (
                    <motion.div
                    key={"first"}
-                              className="flex flex-row flex-wrap min-h-screen pb-20 gap-x-2 gap-y-2 justify-center overflow-y-auto"
+                              className="flex flex-row flex-wrap min-h-screen relative z-10 pb-20 gap-x-2 gap-y-2 justify-center overflow-y-auto"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.5 }}

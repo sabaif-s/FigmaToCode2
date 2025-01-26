@@ -5,6 +5,7 @@ import DashBoardCollection from './components/dashboard/DashboardCollection';
 import Login from './components/login';
 import Signup from './components/signup';
 import ProfilePage from './components/profile';
+import CoinCheck from './components/coin/Coin';
 function App() {
    
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/profile" element={<ProfilePage/>} />
+      <Route path="/coin" element={<CoinCheck/>}/>
     </Routes>
   </Router>
   )
