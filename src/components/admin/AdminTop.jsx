@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import bellIcon from "../../assets/imageDashboard/notification.png";
 import userIcon from "../../assets/profile.png";
+import { useNavigate } from 'react-router-dom';
 
 const AdminHeader = () => {
+    const Navigate=useNavigate();
   return (
     <motion.div
       className="flex w-full justify-between items-center bg-white"
@@ -48,7 +50,11 @@ const AdminHeader = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0 }}
         >
-          <img src={userIcon} alt="User" className="w-6 h-6 rounded-full" />
+          <img 
+          onClick={()=>{
+            Navigate("/adminDash");
+          }}
+          src={userIcon} alt="User" className="w-6 h-6 rounded-full" />
         </motion.button>
       </div>
     </motion.div>

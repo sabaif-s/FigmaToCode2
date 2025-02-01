@@ -10,6 +10,7 @@ import WithdrawPage from './components/withdraw/Withdraw';
 import EditProfile from './components/edit/EditProfile';
 import AdminDashboard from './components/dashboardAdmin/AdminDashboard';
 import Admin from './components/admin/Admin';
+import WithdrawalRequest from './components/request/WithdrawalRequest';
 function App() {
    
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/edit" element={<EditProfile/>}/>
       <Route path="/admin" element={<Admin/>}/>
       <Route path="/adminDash" element={<AdminDashboard/>}/>
+      <Route path="/withdrawalRequest" element={<WithdrawalRequest/>}/>
     </Routes>
   </Router>
   )

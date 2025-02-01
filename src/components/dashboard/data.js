@@ -40,6 +40,12 @@ export const referralsData = [
     coins: "24k coins", // Reduced coins
     imageUser: imageUser, // Replace with actual user image path
   },
+  {
+    id: 7,
+    name: "Hanan Fekadu",
+    coins: "23k coins", // Reduced coins
+    imageUser: imageUser, // Replace with actual user image path
+  },
 ];
 export const leaderboardData = [
       {

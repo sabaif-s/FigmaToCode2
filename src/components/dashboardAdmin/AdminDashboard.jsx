@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FaMoneyCheckAlt, FaList, FaComments, FaShieldAlt } from 'react-icons/fa';
-
+ 
 const ProfilePage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const Navigate = useNavigate();
@@ -14,17 +14,12 @@ const ProfilePage = () => {
     { label: "Log out", description: "Further secure your account for safety" },
   ];
 
-//   useEffect(() => {
-//     if (activeIndex === 1) {
-//       Navigate("/coin");
-//     }
-//     if (activeIndex === 2) {
-//       Navigate("/withdraw");
-//     }
-//     if (activeIndex === 0) {
-//       Navigate("/edit");
-//     }
-//   }, [activeIndex]);
+  useEffect(() => {
+    if (activeIndex == 0) {
+      Navigate("/withdrawalRequest");
+    }
+    
+  }, [activeIndex]);
 
   return (
     <div className="flex justify-center md:items-center md:h-screen md:bg-red-300">
