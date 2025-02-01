@@ -32,13 +32,13 @@ const WithdrawalRequest = () => {
   return (
     <div className="flex justify-center md:items-center md:bg-red-300">
       <motion.div
-        className="w-[390px] bg-white flex flex-col items-center rounded-[24px] rounded-tl-[32px]"
+        className="w-[390px] bg-white flex flex-col items-center rounded-[32px] rounded-t-[32px] "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="w-[390px] h-16 flex items-center px-4 fixed top-0 bg-white z-10"
+          className="w-[390px] h-16 flex items-center px-4 fixed rounded-t-[32px] top-0 bg-white z-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
