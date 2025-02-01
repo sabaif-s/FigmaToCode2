@@ -126,7 +126,7 @@ const EditProfile = () => {
             />
           </motion.div>
           <motion.div
-            className="w-full border-[1px] border-[#9E9E9E] relative z-50 rounded-lg p-4 flex justify-start gap-x-2 items-center"
+            className="w-full border-[1px] border-[#9E9E9E] relative z-40 rounded-lg p-4 flex justify-start gap-x-2 items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -232,7 +232,7 @@ const EditProfile = () => {
         </div>
         {
           showPopUp && (
-            <div className='absolute w-full h-full flex justify-center items-center ' >
+            <div className='absolute z-50 w-full h-full flex justify-center items-center ' >
              <PopUp  key={"popup"} clicked={clickHandle} />
             </div>
           )
