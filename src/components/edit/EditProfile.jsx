@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import right from "../../assets/withdraw/right.png";
 import { motion } from 'framer-motion';
 import PhoneInput from "react-phone-input-2";
+import PopUp from '../popup/PopUp';
 import "react-phone-input-2/lib/style.css";
 
 const EditProfile = () => {
@@ -14,17 +15,24 @@ const EditProfile = () => {
   const [fullName3, setFullName3] = useState("youremail@domain.com");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [clickedRadio, setClickedRadio] = useState(0);
+  const [showPopUp,setShowPopUp]=useState(false);
+  
   const Navigate = useNavigate();
+
+  const clickHandle = (clickedValue) => {
+    console.log("clicked value: ", clickedValue);
+    setShowPopUp(false);
+  }
 
   return (
     <div className='w-full h-full flex justify-center items-center'>
       <motion.div
-        className='rounded-[32px] bg-white md:w-[390px] md:h-[844px] flex flex-col gap-y- justify-start items-center w-full h-full drop-shadow'
+        className='rounded-[32px] bg-white md:w-[390px] md:h-[844px] relative flex flex-col  justify-start items-center w-full h-full drop-shadow'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='w-full mt-[3.4%] px-[4.1%] relative flex justify-center items-center'>
+        <div className='w-full pt-[6.4%] px-[4.1%]  flex justify-center items-center'>
           <span className='text-[#323434] font-semibold text-[22px]'>
             Edit Profile
           </span>
@@ -118,7 +126,7 @@ const EditProfile = () => {
             />
           </motion.div>
           <motion.div
-            className="w-full border-[1px] border-[#9E9E9E] rounded-lg p-4 flex justify-start gap-x-2 items-center"
+            className="w-full border-[1px] border-[#9E9E9E] relative z-50 rounded-lg p-4 flex justify-start gap-x-2 items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -139,7 +147,10 @@ const EditProfile = () => {
               Payment
             </span>
             <motion.div
-              className="w-full relative flex justify-start items-center gap-x-4"
+             onClick={() => {
+              setClickedRadio(1);
+            }}
+              className="w-full relative flex cursor-pointer justify-start items-center gap-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -161,13 +172,18 @@ const EditProfile = () => {
               ></div>
             </motion.div>
             <motion.div
-              className="w-full flex relative justify-start items-center gap-x-4"
+            onClick={() => {
+              setClickedRadio(2);
+            }}
+              className="w-full flex relative cursor-pointer justify-start items-center gap-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-12 h-12 bg-[#F2F4F5] p-3 rounded-[12px] flex justify-center items-center">
+              <div
+              
+              className="w-12 h-12 bg-[#F2F4F5] p-3 rounded-[12px] flex justify-center items-center">
                 <img src={telebirr} className="w-8 h-8 object-cover" alt="" />
               </div>
               <span className="text-[#404446] text-[10px] font-semibold text-base leading-[24px]">
@@ -183,7 +199,7 @@ const EditProfile = () => {
               ></div>
             </motion.div>
             <motion.div
-              className="w-full flex relative justify-start items-center gap-x-4"
+              className="w-full flex relative cursor-pointer justify-start items-center gap-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -200,6 +216,9 @@ const EditProfile = () => {
               </div>
             </motion.div>
             <motion.button
+              onClick={()=>{
+                setShowPopUp(true);
+              }}
               className="w-full bg-[#D83E3E] rounded-xl leading-[18.75px] text-base text-white py-3 flex justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -209,8 +228,19 @@ const EditProfile = () => {
               Save
             </motion.button>
           </div>
+          
         </div>
+        {
+          showPopUp && (
+            <div className='absolute w-full h-full flex justify-center items-center ' >
+             <PopUp  key={"popup"} clicked={clickHandle} />
+            </div>
+          )
+        }
+       
       </motion.div>
+     
+     
     </div>
   );
 };

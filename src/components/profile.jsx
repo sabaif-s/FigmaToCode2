@@ -21,6 +21,9 @@ useEffect(()=>{
   if(activeIndex == 2){
     Navigate("/withdraw");
   }
+  if(activeIndex == 0){
+    Navigate("/edit");
+  }
 },[activeIndex]);
   return (
     <div className="flex justify-center md:items-center md:h-screen md:bg-red-300" >

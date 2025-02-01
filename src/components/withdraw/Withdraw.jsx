@@ -9,15 +9,21 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
+import PopUp from "../popup/PopUp";
 
 const WithdrawPage = () => {
   const [clickedRadio, setClickedRadio] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [showPopUp,setShowPopUp]=useState(false);
   const Navigate = useNavigate();
+  const clickHandle = (clickedValue) => {
+    console.log("clicked value: ", clickedValue);
+    setShowPopUp(false);
+  }
 
   return (
     <div className="w-full h-screen bg-red-300 flex justify-center md:items-center">
-      <div className="md:rounded-[24px] bg-white pt-10 flex flex-col gap-y-2 w-full h-full md:w-[390px] md:h-[844px] justify-start md:rounded-tl-[32px] items-center px-4">
+      <div className="md:rounded-[24px] bg-white relative pt-10 flex flex-col gap-y-2 w-full h-full md:w-[390px] md:h-[844px] justify-start md:rounded-tl-[32px] items-center px-4">
         <div className="flex justify-center items-center relative w-full">
           <span className="text-[#323434] text-[22px] font-semibold leading-sm">
             Withdrawal
@@ -137,6 +143,9 @@ const WithdrawPage = () => {
             </div>
           </motion.div>
           <motion.button
+           onClick={()=>{
+            setShowPopUp(true);
+          }}
             className="w-full bg-[#D83E3E] rounded-xl leading-[18.75px] text-base text-white py-3 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,6 +155,13 @@ const WithdrawPage = () => {
             Withdraw
           </motion.button>
         </div>
+        {
+          showPopUp && (
+            <div className='absolute w-full h-full flex justify-center items-center ' >
+             <PopUp  key={"popup"} clicked={clickHandle} />
+            </div>
+          )
+        }
       </div>
     </div>
   );
