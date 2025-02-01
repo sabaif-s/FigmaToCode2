@@ -8,7 +8,7 @@ import ProfilePage from './components/profile';
 import CoinCheck from './components/coin/Coin';
 import WithdrawPage from './components/withdraw/Withdraw';
 import EditProfile from './components/edit/EditProfile';
-import ChatPractice from './components/chart/Practice';
+import AdminDashboard from './components/dashboardAdmin/AdminDashboard';
 import Admin from './components/admin/Admin';
 function App() {
    
@@ -24,8 +24,8 @@ function App() {
       <Route path="/coin" element={<CoinCheck/>}/>
       <Route path="/withdraw" element={<WithdrawPage/>}/>
       <Route path="/edit" element={<EditProfile/>}/>
-      <Route path="/chat" element={<ChatPractice/>}/>
       <Route path="/admin" element={<Admin/>}/>
+      <Route path="/adminDash" element={<AdminDashboard/>}/>
     </Routes>
   </Router>
   )
