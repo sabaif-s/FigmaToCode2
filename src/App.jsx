@@ -9,6 +9,7 @@ import CoinCheck from './components/coin/Coin';
 import WithdrawPage from './components/withdraw/Withdraw';
 import EditProfile from './components/edit/EditProfile';
 import ChatPractice from './components/chart/Practice';
+import Admin from './components/admin/Admin';
 function App() {
    
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/withdraw" element={<WithdrawPage/>}/>
       <Route path="/edit" element={<EditProfile/>}/>
       <Route path="/chat" element={<ChatPractice/>}/>
+      <Route path="/admin" element={<Admin/>}/>
     </Routes>
   </Router>
   )
