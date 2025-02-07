@@ -22,7 +22,7 @@ const WithdrawPage = () => {
   }
 
   return (
-    <div className="w-full h-screen bg-red-300 flex justify-center md:items-center">
+    <div className="w-full h-screen pt-16 bg-red-300 flex justify-center md:items-center">
       <div className="md:rounded-[24px] bg-white relative pt-10 flex flex-col gap-y-2 w-full h-full md:w-[390px] md:h-[844px] justify-start md:rounded-tl-[32px] items-center px-4">
         <div className="flex justify-center items-center relative w-full">
           <span className="text-[#323434] text-[22px] font-semibold leading-sm">

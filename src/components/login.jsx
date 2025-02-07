@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const Navigate=useNavigate()
   return (
-    <div className="w-full flex md:items-center h-screen justify-center" >
+    <div className="w-full flex md:items-center h-screen justify-center pt-16 bg-red-300 " >
     <motion.div
-      className="justify-center w-full w-full md:w-[390px] md:h-[844px] h-screen rounded-[24px] items-center relative shadow-lg overflow-hidden"
+      className="justify-center w-full md:w-[390px] bg-white md:h-[844px] h-screen rounded-[24px] items-center relative shadow-lg overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

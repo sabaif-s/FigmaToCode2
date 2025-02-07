@@ -26,7 +26,7 @@ useEffect(()=>{
   }
 },[activeIndex]);
   return (
-    <div className="flex justify-center md:items-center md:h-screen md:bg-red-300" >
+    <div className="flex justify-center pt-16 md:items-center md:h-screen md:bg-red-300" >
     <motion.div
       className="w-[390px] h-[844px] bg-white flex flex-col items-center rounded-[24px] rounded-tl-[32px]"
       initial={{ opacity: 0 }}

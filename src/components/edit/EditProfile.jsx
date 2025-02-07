@@ -25,7 +25,7 @@ const EditProfile = () => {
   }
 
   return (
-    <div className='w-full h-full flex justify-center items-center'>
+    <div className='w-full h-full bg-red-300 h-screen pt-16 flex justify-center items-center'>
       <motion.div
         className='rounded-[32px] bg-white md:w-[390px] md:h-[844px] relative flex flex-col  justify-start items-center w-full h-full drop-shadow'
         initial={{ opacity: 0, y: 20 }}

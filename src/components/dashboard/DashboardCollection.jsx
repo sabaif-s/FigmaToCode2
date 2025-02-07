@@ -10,7 +10,7 @@ const  DashBoardCollection = () => {
               setCurrentShow(id);
     }
     return (
-        <div className='md:bg-red-300 md:h-screen md:w-full md:flex md:justify-center md:items-center ' >
+        <div className='md:bg-red-300 md:h-screen md:w-full pt-16 md:flex md:justify-center md:items-center ' >
            <DashBoardFooter/>
          <div className='px-4 py-2 w-full relative bg-white h-full md:rounded-[24px] md:w-[390px] md:h-[844px] overflow-y-scroll scrollbar-hide' >
             

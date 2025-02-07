@@ -16,14 +16,14 @@ const LandingPageThree = () => {
     return (
         <>
             <motion.div
-                className='w-full relative mt-8 md:rounded-tl-[32px] md:rounded-[24px] md:w-[390px] bg-white  md:rounded-[24px]  '
+                className='w-full relative  md:w-[390px] bg-white  '
                 style={{ height: "367px" }}
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5 }}
             >
-                <div className='w-full h-full bg-white md:rounded-tl-[32px] md:rounded-[24px] relative text-4xl z-50 gap-y-2 text-white flex flex-col justify-center items-center'>
+                <div className='w-full h-full bg-white relative text-4xl z-50 gap-y-0 text-white flex flex-col justify-center items-center'>
                     <span className='relative z-50'>
                         Lorem ipsum dolor
                     </span>
@@ -41,17 +41,17 @@ const LandingPageThree = () => {
                         Get Started
                     </button>
                     </Link>
-                    <img src={backImage} className='absolute z-10 top-0 md:rounded-tl-[32px] md:rounded-[24px]' alt="" />
+                    <img src={backImage} className='absolute z-10 bottom-0' alt="" />
                 </div>
             </motion.div>
             <motion.div
-                className='w-full md:w-[390px] md:rounded-tl-[32px] md:rounded-[24px] bg-black text-white flex flex-col gap-y-4'
+                className='w-full md:w-[390px] bg-black text-white flex flex-col gap-y-4'
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 }}
             >
                 <div className='px-4 w-full text-white flex flex-col gap-y-4'>
-                    <div className='mb-8'>
+                    <div className=''>
                         <img src={logo} alt="" />
                     </div>
                     <div className='w-full flex mb-16 justify-between items-start'>
